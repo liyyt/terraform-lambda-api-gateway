@@ -59,3 +59,7 @@ variable "dns_record_type" {
   default = "A"
 }
 
+variable "dns_ttl" {
+  description = "DNS TTL"
+  default = "300"
+}
