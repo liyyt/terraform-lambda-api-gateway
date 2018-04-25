@@ -54,6 +54,10 @@ variable "dns_record_name" {
   default = ""
 }
 
+variable "dns_records" {
+  description = "Records to add [\"www.site.com\"]"
+}
+
 variable "dns_record_type" {
   description = "Record type (A/CNAME)"
   default = "A"

@@ -9,5 +9,6 @@ resource "aws_route53_record" "main" {
   name = "${var.dns_record_name}"
   type = "${var.dns_record_type}"
   ttl = "${var.dns_ttl}"
+  records = ["${var.dns_records}"]
 }
 
