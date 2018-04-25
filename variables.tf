@@ -56,6 +56,7 @@ variable "dns_record_name" {
 
 variable "dns_records" {
   description = "Records to add [\"www.site.com\"]"
+  type = "list"
 }
 
 variable "dns_record_type" {
