@@ -30,7 +30,7 @@ variable "lambda_handler" {
 
 variable "node_version" {
   description = "Version of node to run"
-  default = "6.10"
+  default = "8.10"
 }
 
 variable "api_gateway_description" {
@@ -39,6 +39,14 @@ variable "api_gateway_description" {
 }
 
 // DNS
+variable "domain_name" {
+  description = "Domain name for api gateway"
+}
+
+variable "cdn_domain_name" {
+  description = "Domain name for your cdn"
+}
+
 variable "create_dns" {
   description = "Create a DNS record"
   default = "0"
@@ -49,22 +57,17 @@ variable "dns_zone" {
   default = ""
 }
 
-variable "dns_record_name" {
-  description = "Record name"
+// SSL Cert
+variable "certificate_arn" {
+  description = "SSL certificate ARN"
+}
+
+
+variable "cloudfront_origin_access_identity" {
+  description = "A weird thing. Can be left empty, or add words"
   default = ""
 }
 
-variable "dns_records" {
-  description = "Records to add [\"www.site.com\"]"
+variable "cloudfront_domain_aliases" {
   type = "list"
-}
-
-variable "dns_record_type" {
-  description = "Record type (A/CNAME)"
-  default = "A"
-}
-
-variable "dns_ttl" {
-  description = "DNS TTL"
-  default = "300"
 }
